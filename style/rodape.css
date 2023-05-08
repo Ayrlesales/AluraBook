@@ -1,0 +1,53 @@
+hr {
+    margin: 0;
+}
+
+.rodape {
+    background-color: var(--rodape-color);
+    padding: 1em;
+}
+
+.tabela_footer {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .rodape {
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    .tabela_footer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .educacao,
+    .educacao_on,
+    .comunidade {
+        display: grid;
+        padding: 0 2em;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .c_codigo {
+        font-size: 14px;
+        color: #474646;
+        text-decoration: none;
+        padding: 1em 0;
+    }
+
+    .titulo_rodape {
+        font-size: 14px;
+        color: #858585;
+        text-transform: uppercase;
+        padding: 2em 0 1em 0;
+    } 
+
+    .texto_footer {
+        font-size: 24px;
+        padding-top: 1em;
+    }
+    
+}

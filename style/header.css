@@ -1,0 +1,185 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--branco);
+    align-items: center;
+    position: relative;
+}
+
+.cabecalho_menu_hamburguer {
+    width: 36px;
+    height: 24px;
+    background-image: url("/img/Menu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container_img {
+    padding: 1em;
+}
+
+.lista_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+    z-index: 1;
+}
+
+.container_botao:checked~.lista_menu {
+    display: block;
+}
+
+.lista_menu_titulo, 
+.lista_menu_item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista_menu_titulo {
+    color: var(--cor-categorias);
+    font-weight: 700;
+}
+
+.lista_menu_link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.container_botao {
+    display: none;
+}
+
+.container_titulo,
+.opcoes {
+    display: none;
+}
+
+.container_desktop {
+    display: none;
+}
+
+
+/* ~ procura um elemento q tem a classe e o > busca um elemento que está dentro deste elemento */
+.container_botao:checked ~ .container_rotulo > .cabecalho_menu_hamburguer {
+    background-image: url("/img/Menu\ Aberto.svg");
+}
+
+.container_botao:checked ~ .container_rotulo {
+    background: var(--azul-degrade);
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .container_titulo,
+    .container_titulo_negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    /* displey block nesse caso para quando
+    o minimo da tela estiver em 1024px aparecer
+    corretamente o container_titulo, caso contrário
+    o "container_titulo{display:none}" citado no mobile
+    prevaleceria e o titulo não apareceria de ambos os modos */
+    .container_titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container_titulo_negrito {
+        font-weight: 700;
+    }
+
+    .container_img_favoritos,
+    .cabecalho_menu_hamburguer {
+        display: none;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes_itens {
+        padding: 1em;
+    }
+
+    .opcoes_link {
+        text-decoration: none;
+        color: black;
+    }
+
+    .opcoes_botoes:checked~.lista_menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes_botoes {
+        display: none;
+    }
+
+    .container_desktop {
+        display: none;
+    }
+
+    .opcoes_botoes:checked ~ .opcoes_rotulo > .opcoes_itens{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+}
+
+
+
+@media screen and (min-width: 1728px) {
+
+    .container_desktop {
+        display: flex;
+    }
+
+    #imgGG {
+        display: none;
+    }
+
+    .container_img {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    .img_desk  {
+        padding-right: 0.5em;
+    }
+
+    .container_titulo {
+        margin-right: 0;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .lista_menu_item:hover {
+        background-color: var(--azul);
+    }
+
+    .lista_menu_item:hover > .lista_menu_link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+}
